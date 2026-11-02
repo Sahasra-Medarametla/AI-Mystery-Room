@@ -4,5 +4,14 @@ server/node_modules/
 client/dist/
 server/.env
 client/.env
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
 .DS_Store
 npm-debug.log*

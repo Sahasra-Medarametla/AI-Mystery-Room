@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api', timeout: 120000 });
+const api = axios.create({ baseURL: '/api', timeout: 120000 });
 api.interceptors.request.use((config) => {
   const credentials = localStorage.getItem('mysteryCredentials');
   if (credentials) {
