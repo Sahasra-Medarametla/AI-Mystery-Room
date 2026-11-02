@@ -1,0 +1,5 @@
+export const DIFFICULTIES = Object.freeze({
+  easy: { suspects: 3, clues: 5, hints: 2, baseScore: 100 },
+  medium: { suspects: 4, clues: 7, hints: 3, baseScore: 150 },
+  hard: { suspects: 5, clues: 9, hints: 3, baseScore: 200 }
+});

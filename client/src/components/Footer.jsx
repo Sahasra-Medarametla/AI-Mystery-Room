@@ -1,0 +1,2 @@
+import { Fingerprint } from 'lucide-react';
+export default function Footer() { return <footer className="footer shell"><div className="brand footer-brand"><span className="brand-mark"><Fingerprint size={18} /></span><span>CASEFILE<span className="brand-dot">.</span></span></div><span>Every detail matters. © 2026 Casefile</span><span className="mono">A FICTIONAL INVESTIGATION EXPERIENCE</span></footer>; }

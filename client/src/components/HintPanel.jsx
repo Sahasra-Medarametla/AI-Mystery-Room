@@ -1,0 +1,6 @@
+import { useState } from 'react';
+import { Lightbulb, ArrowUpRight, LoaderCircle } from 'lucide-react';
+export default function HintPanel({ remaining, hints = [], onRequest, busy }) {
+  const [open, setOpen] = useState(false);
+  return <section className="hint-panel"><div className="hint-top"><div className="hint-icon"><Lightbulb size={19} /></div><div><span className="eyebrow">A NUDGE, NOT THE ANSWER</span><h3>Need a lead?</h3></div><span className="hint-count">{remaining} <small>LEFT</small></span></div><p>Somewhere in this room, the details are already talking.</p>{hints.length > 0 && <div className="hint-list">{hints.map((hint, i) => <div className="hint-item" key={`${i}-${hint}`}><span>0{i + 1}</span><p>{hint}</p></div>)}</div>}<button className="text-action" onClick={async () => { if (remaining > 0 && !busy) { await onRequest(); setOpen(true); } else setOpen((value) => !value); }} disabled={busy || (remaining === 0 && hints.length === 0)}>{busy ? <LoaderCircle className="spin" size={15} /> : <>{remaining ? 'Request a hint' : 'All hints used'} <ArrowUpRight size={15} /></>}</button>{open && remaining === 0 && hints.length === 0 && <span className="muted small">No leads left in the file.</span>}</section>;
+}
